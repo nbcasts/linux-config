@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+res = `/usr/bin/xwininfo`
+regex = %r[^xwininfo: Window id: (.+) "(.+)"$]
+winid = res[regex, 1].to_i(16)
+winname = res[regex, 2]
+
+File.open("/tmp/current_window", "w") do |f|
+  f << winid
+end

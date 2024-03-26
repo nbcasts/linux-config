@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+res = `/usr/bin/xprop`
+puts res[/^WM_CLASS\(STRING\) = \".+\", \"(.+)\"/, 1]

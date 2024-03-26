@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# $1 => VM name
+# $2 => Resolution X,Y
+
+if [ -z $1 ]
+then
+    echo "Please provide a VM name"
+    echo "  $0 <VM Name> <X,Y>"
+    exit 1
+fi
+
+if [ ! -z $2 ]
+then
+    /usr/bin/vboxmanage setextradata $1 GUI/LastGuestSizeHint $2
+else
+    /usr/bin/vboxmanage setextradata $1 GUI/LastGuestSizeHint 1080,720
+fi

@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+unless File.exist?("/tmp/current_window")
+  system "set_current_window"
+end
+
+active_window = `xdotool getactivewindow`.to_i
+
+system "xdotool windowactivate --sync $(cat /tmp/current_window) key --clearmodifiers ctrl+r"
+system "xdotool windowactivate --sync #{active_window}"
