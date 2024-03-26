@@ -1,4 +1,4 @@
-source /home/fedex/.rvm/scripts/rvm
+source /home/nbcasts/.rvm/scripts/rvm
 
 export EDITOR=emacs
 export ALTERNATE_EDITOR=""
